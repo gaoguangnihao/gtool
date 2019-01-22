@@ -52,14 +52,14 @@ include $(BUILD_SHARED_LIBRARY)
 
 
 # GtoolCommand
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := $(call all-subdir-java-files)
-LOCAL_MODULE := gtoolCmd
-include $(BUILD_JAVA_LIBRARY)
+# include $(CLEAR_VARS)
+# LOCAL_SRC_FILES := $(call all-subdir-java-files)
+# LOCAL_MODULE := gtoolCmd
+# include $(BUILD_JAVA_LIBRARY)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE := gtoolCmd
-LOCAL_SRC_FILES := gtoolCmd
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_MODULE_TAGS := optional
-include $(BUILD_PREBUILT)
+# include $(CLEAR_VARS)
+# LOCAL_MODULE := gtoolCmd
+# LOCAL_SRC_FILES := gtoolCmd
+# LOCAL_MODULE_CLASS := EXECUTABLES
+# LOCAL_MODULE_TAGS := optional
+# include $(BUILD_PREBUILT)

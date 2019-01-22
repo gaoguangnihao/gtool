@@ -4,6 +4,7 @@
 
 #include <android/log.h>
 
+#undef LOG_TAG
 #define LOG_TAG "gtool>>"
 
 #define DEBUG 1

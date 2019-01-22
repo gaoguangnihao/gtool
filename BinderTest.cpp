@@ -35,7 +35,6 @@ char* BinderTest::processCmdStr(const char *str) {
 
 void BinderTest::instantiate() {
 	//GLogD("instantiate func:%s, line:%s, file:%s", __func__, __LINE__, __FILE__);
-	GLogD("instantiate 123");
 	GLogD("instantiate func:%s, line:%d, file:%s", __func__, __LINE__, __FILE__);
 	if (mInstance == NULL) {
 		mInstance = new BinderTest();
