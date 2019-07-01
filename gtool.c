@@ -22,6 +22,7 @@ static struct
 	{"cpu", cpu_main, "cpu used info"},
 	{"daemon", daemon_main, "daemon"},
 	{"binderclient", binder_main, "binderclient"},
+	{"draw",gralloc_main, "gralloc test"},
 
 	{"quit", NULL, "quit program"},
 	{NULL, NULL, NULL}

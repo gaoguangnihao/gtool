@@ -19,7 +19,8 @@ LOCAL_SRC_FILES:= \
 	daemon.cpp \
 	IBinderTest.cpp \
 	BinderTest.cpp	\
-	binder_client.cpp
+	binder_client.cpp \
+	Gralloc.cpp
 	
 LOCAL_MODULE:= gtool
 LOCAL_MODULE_TAGS := optional

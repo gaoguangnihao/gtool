@@ -10,6 +10,7 @@
 #define DEBUG 1
 
 #define GLogD(args...)  if(DEBUG) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, args); 
+#define GLogE(args...)   __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, args); 
 
 //#define Log_Position  if(DEBUG) do {__android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, "%s(%d){%s}",__FILE__,__LINE__,__func__);}while(0)
 

@@ -19,6 +19,7 @@ int thread_main(char **token, int len);
 int cpu_main(char **token, int len);
 int daemon_main(char **token, int len);
 int binder_main(char **token, int len);
+int gralloc_main(char **token, int len);
 
 #ifdef __cplusplus
 }
