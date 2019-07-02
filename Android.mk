@@ -8,6 +8,10 @@ LOCAL_C_INCLUDES := $(TARGET_OUT_HEADERS)/common/inc
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
 #LOCAL_C_INCLUDES += frameworks/base/include
+LOCAL_C_INCLUDES += hardware/libhardware/include
+LOCAL_C_INCLUDES +=	hardware/libhardware_legacy/include
+LOCAL_C_INCLUDES +=	system/core/include
+LOCAL_C_INCLUDES +=	external/skia/include/core
 
 LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
@@ -27,15 +31,15 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_SHARED_LIBRARIES  += libcutils \
 	libutils \
 	libbinder \
+	libskia \
+	libhardware \
 
 include $(BUILD_EXECUTABLE)
 
 include $(CLEAR_VARS)
-
 LOCAL_C_INCLUDES := $(TARGET_OUT_HEADERS)/common/inc
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
-#LOCAL_C_INCLUDES += frameworks/base/include
 
 LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 

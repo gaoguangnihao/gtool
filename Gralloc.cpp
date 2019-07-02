@@ -1,26 +1,30 @@
 
+#include <system/window.h>
 #include <hardware/hardware.h>
-#include <hardware/hwcomposer.h>
+#include <hardware/fb.h>
+#include <hardware/gralloc.h>
+#include "hardware/hwcomposer.h"
 
-//#include "SkBitmap.h"
 
+#include "SkBitmap.h"
 #include "headers.h"
 
-// hw_module_t const* module;
-// framebuffer_device_t* fbDev;
-// alloc_device_t* grDev;
-// buffer_handle_t handle;
+hw_module_t const* module;
+framebuffer_device_t* fbDev;
+alloc_device_t* grDev;
+buffer_handle_t handle;
 
-// gralloc_module_t const *mAllocMod;
+gralloc_module_t const *mAllocMod;
 
 int stride;
 int err;
+void* vaddr;
 
-//SkBitmap mBitmap = new SkBitmap();
+SkBitmap mBitmap;
 
 int gralloc_main (char **token, int len) {
 	GLogD("gralloc_main enter ");
-/*	if (hw_get_module(GRALLOC_HARDWARE_MODULE_ID, &module) == 0) {
+	if (hw_get_module(GRALLOC_HARDWARE_MODULE_ID, &module) == 0) {
 		err = framebuffer_open(module, &fbDev);  // 
 		if (err) GLogE("couldn't open framebuffer HAL (%s)", strerror(-err));
 
@@ -36,7 +40,10 @@ int gralloc_main (char **token, int len) {
 		err = mAllocMod->lock(mAllocMod, handle, HAL_PIXEL_FORMAT_RGBA_8888, 0, 0, 240, 320, &vaddr);
 		GLogD("++++++++++++++++> vaddr = %p\n", vaddr);
 
-	//	bitmap.lockPixels();
+		uint16_t  piexls[320][480][100] = {0x77};
+		mBitmap.lockPixels();
+		mBitmap.setPixels(piexls[0][0]);
+		mBitmap.unlockPixels();
 
 		err = mAllocMod->unlock(mAllocMod, handle);
 		err = mAllocMod->unregisterBuffer(mAllocMod, handle); //解除映射内存
@@ -44,6 +51,6 @@ int gralloc_main (char **token, int len) {
 		grDev->free(grDev, handle);//释放图形缓冲区       
 		gralloc_close(grDev);//关闭gralloc设备
 		framebuffer_close(fbDev);//关闭fb设备 
-	} */
+	}
 	return 0;
 }
