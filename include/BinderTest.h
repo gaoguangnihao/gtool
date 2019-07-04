@@ -17,7 +17,9 @@ public:
 
 	char* processCmdStr(const char *str); 
 
-	static void instantiate();
+	void grallocRender();
+
+	static BinderTest* instantiate();
 
 	virtual void binderDied(const wp<IBinder>& who);  
 	

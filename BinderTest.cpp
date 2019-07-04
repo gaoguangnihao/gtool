@@ -6,6 +6,7 @@
 #include <binder/IPCThreadState.h>
 
 #include "BinderTest.h"
+#include "GrallocLib.h"
 
 
 BinderTest* BinderTest::mInstance = NULL;
@@ -33,7 +34,13 @@ char* BinderTest::processCmdStr(const char *str) {
 	return ret;
 } 
 
-void BinderTest::instantiate() {
+void BinderTest::grallocRender() {
+	GLogD("grallocRender");
+	GrallocLib* p = new GrallocLib();
+	p->render();
+}
+
+BinderTest* BinderTest::instantiate() {
 	//GLogD("instantiate func:%s, line:%s, file:%s", __func__, __LINE__, __FILE__);
 	GLogD("instantiate func:%s, line:%d, file:%s", __func__, __LINE__, __FILE__);
 	if (mInstance == NULL) {
@@ -42,6 +49,7 @@ void BinderTest::instantiate() {
 		                          String16("gtool.testbinder"), mInstance);    
 		GLogD("addService ret = %d", st);
 	}
+	return mInstance;
 }
 void BinderTest::binderDied(const wp<IBinder>& who) {
 	GLogD("binderDied() 1 %p, tid %d, calling tid %d", 

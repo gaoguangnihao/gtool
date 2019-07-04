@@ -24,7 +24,8 @@ LOCAL_SRC_FILES:= \
 	IBinderTest.cpp \
 	BinderTest.cpp	\
 	binder_client.cpp \
-	Gralloc.cpp
+	Gralloc.cpp	\
+	GrallocLib.cpp \
 	
 LOCAL_MODULE:= gtool
 LOCAL_MODULE_TAGS := optional
@@ -40,18 +41,25 @@ include $(CLEAR_VARS)
 LOCAL_C_INCLUDES := $(TARGET_OUT_HEADERS)/common/inc
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
+LOCAL_C_INCLUDES += hardware/libhardware/include
+LOCAL_C_INCLUDES +=	hardware/libhardware_legacy/include
+LOCAL_C_INCLUDES +=	system/core/include
+LOCAL_C_INCLUDES +=	external/skia/include/core
 
 LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_SRC_FILES:= \
 	IBinderTest.cpp \
 	BinderTest.cpp	\
+	GrallocLib.cpp	\
 	
 LOCAL_MODULE:= libgtool
 LOCAL_MODULE_TAGS := optional
 LOCAL_SHARED_LIBRARIES  += libcutils \
 	libutils \
 	libbinder \
+	libskia \
+	libhardware \
 
 include $(BUILD_SHARED_LIBRARY)
 
