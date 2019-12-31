@@ -6,7 +6,7 @@
 
 
 #include <utils/Thread.h>
-#include "Queue.h"
+#include "queue.h"
 
 using namespace android;
 

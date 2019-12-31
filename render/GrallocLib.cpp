@@ -1,8 +1,39 @@
 
-#include "GrallocLib.h"
+#include "stdio.h"
 
+#include "GrallocLib.h"
 #include "SkBitmap.h"
 #include "log.h"
+
+// using namespace std;
+
+// int readPng(string filename, char* buf, size_t size) {
+// 	ifstream streampng;
+// 	streampng.open(filename.c_str(), ios_base::binary);
+// 	streampng.seekg(0, ios::end);
+// 	size = streampng.tellg();
+
+// 	buf = new char[size + 1];
+// 	streampng.seekg(0, ios::beg);
+// 	streampng.read(buf, size);
+// 	return 1;   
+// }
+
+// static void
+// writetofile(const char * fname,const void* buffer, size_t bytes) {
+//     static FILE *fp=NULL;
+//     if(fp==NULL || access( fname, F_OK )==-1){
+//         fp = fopen(fname, "ab+" );
+//         if(fp==NULL){
+//             GLOG("can't open file!");
+//             fp=NULL;
+//             return;
+//         }
+//     }
+//     if(fp!=NULL){
+//         fwrite(buffer , 1 , bytes , fp );
+//     }
+// }
 
 GrallocLib::GrallocLib()
 :fbDev(NULL),
@@ -40,8 +71,18 @@ void GrallocLib::render() {
     	bitmap.setInfo(SkImageInfo::Make(240, 320, kN32_SkColorType, kPremul_SkAlphaType));
     	bitmap.allocPixels();
         bitmap.eraseColor(0x0000ff00);
+       	memcpy(vaddr, bitmap.getPixels(), bitmap.getSize()); 
 
-        memcpy(vaddr, bitmap.getPixels(), bitmap.getSize()); 
+		// char* data;
+		// size_t size;
+		// if (readPng("data/logo.png", data, size) != 1) {
+		// 	GLOG("readpng fail");
+		// }
+		
+		// GLogD("readpng ok, size = %d", size);
+		// memcpy(vaddr, data, size);
+
+		// writetofile("data/out.txt", data, size);
 
 		err = mAllocMod->unlock(mAllocMod, handle);
 

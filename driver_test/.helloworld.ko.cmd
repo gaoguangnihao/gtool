@@ -1,1 +1,0 @@
-cmd_/local/gtool/driver_test/helloworld.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.11.0-26-generic/scripts/module-common.lds --build-id  -o /local/gtool/driver_test/helloworld.ko /local/gtool/driver_test/helloworld.o /local/gtool/driver_test/helloworld.mod.o

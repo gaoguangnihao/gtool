@@ -17,15 +17,15 @@ LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_SRC_FILES:= \
 	gtool.c 	\
-	prop.cpp	\
-	GtoolThread.cpp	\
-	Cpu.cpp	\
-	daemon.cpp \
-	IBinderTest.cpp \
-	BinderTest.cpp	\
-	binder_client.cpp \
-	Gralloc.cpp	\
-	GrallocLib.cpp \
+	tool/prop.cpp	\
+	tool/thread.cpp	\
+	tool/cpu.cpp	\
+	tool/daemon.cpp \
+	binder/IBinderTest.cpp \
+	binder/BinderTest.cpp	\
+	binder/binder_client.cpp \
+	render/Gralloc.cpp	\
+	render/GrallocLib.cpp \
 	
 LOCAL_MODULE:= gtool
 LOCAL_MODULE_TAGS := optional
@@ -49,9 +49,9 @@ LOCAL_C_INCLUDES +=	external/skia/include/core
 LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_SRC_FILES:= \
-	IBinderTest.cpp \
-	BinderTest.cpp	\
-	GrallocLib.cpp	\
+	binder/IBinderTest.cpp \
+	binder/BinderTest.cpp	\
+	render/GrallocLib.cpp	\
 	
 LOCAL_MODULE:= libgtool
 LOCAL_MODULE_TAGS := optional
@@ -76,3 +76,11 @@ include $(BUILD_SHARED_LIBRARY)
 # LOCAL_MODULE_CLASS := EXECUTABLES
 # LOCAL_MODULE_TAGS := optional
 # include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := logo
+LOCAL_MODULE_TAGS  := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := res/logo.png
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/data
+include $(BUILD_PREBUILT)

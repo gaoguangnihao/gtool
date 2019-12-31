@@ -1,7 +1,7 @@
 
 #include <unistd.h>
 
-#include "GtoolThread.h"
+#include "thread.h"
 #include "headers.h"
 
 void GtoolThread::process(){
