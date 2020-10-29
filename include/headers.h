@@ -21,6 +21,8 @@ int daemon_main(char **token, int len);
 int binder_main(char **token, int len);
 int gralloc_main(char **token, int len);
 
+int do_main(char **token, int len);
+
 #ifdef __cplusplus
 }
 #endif

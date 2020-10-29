@@ -17,6 +17,7 @@ LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_SRC_FILES:= \
 	gtool.c 	\
+	test.cpp	\
 	tool/prop.cpp	\
 	tool/thread.cpp	\
 	tool/cpu.cpp	\

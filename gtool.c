@@ -23,7 +23,7 @@ static struct
 	{"daemon", daemon_main, "daemon"},
 	{"binderclient", binder_main, "binderclient"},
 	{"draw",gralloc_main, "gralloc test"},
-
+	{"test",do_main, "test"},
 	{"quit", NULL, "quit program"},
 	{NULL, NULL, NULL}
 };
